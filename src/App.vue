@@ -11,40 +11,28 @@ export default {
       baseUrl: "http://127.0.0.1:8000",
       projects_api: "/api/projects",
       projects: [],
+      links: [],
       currentPage: 1,
       maxPages: null,
     };
   },
   methods: {
-    apiCall(page) {
+    apiCall(url) {
       axios
-        .get(this.baseUrl + this.projects_api + "?page=" + page)
+        .get(url)
         .then((response) => {
           this.projects = response.data.projects.data;
           this.maxPages = response.data.projects.last_page;
           this.currentPage = response.data.projects.current_page;
+          this.links = response.data.projects.links;
         })
         .catch((err) => {
           console.error(err);
         });
     },
-    nextPage() {
-      if (this.currentPage < this.maxPages) {
-        this.currentPage++;
-        this.apiCall(this.currentPage);
-        console.log(this.currentPage);
-      }
-    },
-    prevPage() {
-      if (this.currentPage > 1) {
-        this.currentPage--;
-        this.apiCall(this.currentPage);
-        console.log(this.currentPage);
-      }
-    },
   },
   mounted() {
-    this.apiCall(this.currentPage);
+    this.apiCall(this.baseUrl + this.projects_api);
   },
 };
 </script>
@@ -94,43 +82,24 @@ export default {
         </div>
       </div>
 
-      <div class="d-flex justify-content-center mt-5">
-        <button class="btn btn-secondary" @click="prevPage()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-arrow-left"
-            viewBox="0 0 16 16"
+      <nav aria-label="Page navigation" class="d-flex justify-content-center">
+        <ul class="pagination mt-5">
+          <li
+            class="page-item"
+            v-for="link in this.links"
+            :class="link.active ? 'active' : ''"
           >
-            <path
-              fill-rule="evenodd"
-              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-            />
-          </svg>
-        </button>
-        <div v-for="n in this.maxPages" class="d-flex align-items-center">
-          <a class="mx-1" @click="this.apiCall(n)" style="cursor: pointer">{{
-            n
-          }}</a>
-        </div>
-        <button class="btn btn-secondary" @click="nextPage()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-arrow-right"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-            />
-          </svg>
-        </button>
-      </div>
+            <a
+              class="page-link"
+              role="button"
+              aria-label="Previous"
+              v-html="link.label"
+              @click="apiCall(link.url)"
+            >
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </main>
 
