@@ -42,13 +42,15 @@ export default {
 </script>
 
 <template>
-  <AppHeader></AppHeader>
+  <body class="vh-100">
+    <AppHeader></AppHeader>
 
-  <main>
-    <router-view></router-view>
-  </main>
+    <main>
+      <router-view></router-view>
+    </main>
 
-  <AppFooter></AppFooter>
+    <AppFooter></AppFooter>
+  </body>
 </template>
 
 <style></style>
