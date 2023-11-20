@@ -61,7 +61,7 @@ export default {
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Projects</a>
             </li>
           </ul>
         </div>
