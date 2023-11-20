@@ -44,7 +44,7 @@ export default {
         </div>
       </div>
       <div
-        class="links col-3 d-flex flex-column align-items-center justify-content-between"
+        class="links col-3 d-flex flex-column align-items-end justify-content-between"
       >
         <router-link
           class="btn btn-primary"

@@ -37,7 +37,7 @@ export default {
         <div class="card flex-row shadow" v-if="this.response">
           <img
             v-if="project.image.includes('https')"
-            class="project_preview"
+            class=""
             :src="project.image"
             alt=""
           />
