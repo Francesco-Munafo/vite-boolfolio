@@ -17,7 +17,11 @@ export default {
         .then((response) => {
           console.log(response);
           this.response = true;
-          this.project = response.data.result;
+          if (response.data.success) {
+            this.project = response.data.result;
+          } else {
+            this.$router.push({ name: "NotFound" });
+          }
         })
         .catch((err) => {
           console.error(err);
@@ -114,7 +118,22 @@ export default {
             </div>
           </div>
         </div>
-        <div v-else>Ciao</div>
+        <div class="card flex-row" aria-hidden="true" v-else>
+          <img src="..." class="col-2 placeholder" alt="" />
+          <div class="card-body">
+            <h2 class="card-title placeholder-glow">
+              <span class="placeholder col-6"></span>
+            </h2>
+            <p class="card-text placeholder-glow">
+              <span class="placeholder col-7"></span><br />
+              <span class="placeholder col-4"></span><br />
+              <span class="placeholder col-4"></span><br />
+              <span class="placeholder col-6"></span><br />
+              <span class="placeholder col-9"></span><br />
+              <span class="placeholder col-3"></span><br />
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,10 +1,12 @@
 <script>
 import axios from "axios";
 import ProjectCard from "../components/ProjectCard.vue";
+import AppCardPlaceholder from "../components/AppCardPlaceholder.vue";
 export default {
   name: "ProjectsView",
   components: {
     ProjectCard,
+    AppCardPlaceholder,
   },
   data() {
     return {
@@ -41,9 +43,10 @@ export default {
   <h1 class="p-3 text-muted">Cicciomax's projects</h1>
   <div class="container my-5">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col" v-for="project in projects">
+      <div class="col" v-if="projects.length > 0" v-for="project in projects">
         <ProjectCard :project="project"></ProjectCard>
       </div>
+      <AppCardPlaceholder v-else></AppCardPlaceholder>
     </div>
 
     <nav aria-label="Page navigation" class="d-flex justify-content-center">
