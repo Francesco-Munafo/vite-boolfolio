@@ -8,7 +8,7 @@ export default {
   <div
     class="container single_project d-flex flex-column justify-content-evenly align-content-center"
   >
-    <h1 class="mt-5">Sorry, project not found! 🕵️‍♂️</h1>
+    <h1 class="glitch" data-text="404">ERR - Project not found :(</h1>
     <div>
       <router-link to="/projects" class="btn btn-primary mb-5"
         ><svg
