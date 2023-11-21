@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-  <body class="vh-100">
+  <body>
     <AppHeader></AppHeader>
 
     <main>

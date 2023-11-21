@@ -70,6 +70,7 @@ export default {
         </div>
       </div>
     </div>
+    <h6 class="text-white text-center m-0 py-1">&copy; Francesco Munafò</h6>
   </footer>
 </template>
 
