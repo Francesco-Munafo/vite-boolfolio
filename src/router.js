@@ -8,15 +8,33 @@ import SingleProjectView from "./views/SingleProjectView.vue";
 import NotFoundView from "./views/NotFoundView.vue";
 
 const routes = [
-  { path: "/", component: HomeView },
-  { path: "/projects", component: ProjectsView },
-  { path: "/about", component: AboutView },
-  { path: "/contacts", component: ContactsView },
+  {
+    path: "/",
+    name: "home",
+    component: HomeView,
+  },
+
+  {
+    path: "/projects",
+    name: "projects",
+    component: ProjectsView,
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: AboutView,
+  },
+  {
+    path: "/contacts",
+    name: "contacts",
+    component: ContactsView,
+  },
   {
     path: "/project/:slug",
     name: "project",
     component: SingleProjectView,
   },
+
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",

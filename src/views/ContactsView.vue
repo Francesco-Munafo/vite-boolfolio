@@ -1,5 +1,61 @@
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+  name: "ContactsView",
+  data() {
+    return {
+      baseUrl: "http://127.0.0.1:8000",
+      loading: false,
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      errors: [],
+      success: null,
+    };
+  },
+  methods: {
+    sendForm() {
+      this.loading = true;
+      this.errors = [];
+      this.success = null;
+
+      const payload = {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message,
+      };
+      console.log(payload);
+
+      axios
+        .post(this.baseUrl + "/api/contacts", payload)
+        .then((response) => {
+          console.log("😍", response);
+          const success = response.data.success;
+          if (!success) {
+            console.log(response.data.errors);
+            this.errors = response.data.errors;
+          } else {
+            console.log(response);
+            console.log(response.data.message);
+
+            this.name = "";
+            this.email = "";
+            this.phone = "";
+            this.message = "";
+
+            this.success = response.data.message;
+          }
+          this.loading = false;
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    },
+  },
+};
 </script>
 
 <template>
@@ -14,53 +70,101 @@ export default {};
   </div>
 
   <div class="container">
-    <form action="" class="my-5">
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          class="form-control"
-          placeholder="Your name here"
-          aria-describedby="nameHelper"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="phone" class="form-label">Phone</label>
-        <input
-          type="tel"
-          name="phone"
-          id="phone"
-          class="form-control"
-          placeholder="Your phone number"
-          aria-describedby="phoneHelper"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          class="form-control"
-          placeholder="Your email here"
-          aria-describedby="emailHelper"
-        />
+    <div class="alert alert-success" role="alert" v-if="success">
+      <strong>
+        {{ success }}
+      </strong>
+    </div>
+    <form action="" class="my-5" v-on:submit.prevent="sendForm()">
+      <div v-if="!loading">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            v-model="name"
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            :class="{ 'is-invalid': errors.name }"
+            placeholder="Your name here"
+            aria-describedby="nameHelper"
+          />
+          <div class="alert alert-danger" role="alert" v-if="errors.name">
+            <strong>Errors!</strong>
+
+            <ul>
+              <li v-for="message in errors.name">{{ message }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input
+            v-model="phone"
+            type="tel"
+            name="phone"
+            id="phone"
+            class="form-control"
+            :class="{ 'is-invalid': errors.name }"
+            placeholder="Your phone number"
+            aria-describedby="phoneHelper"
+          />
+          <div class="alert alert-danger" role="alert" v-if="errors.name">
+            <strong>Errors!</strong>
+
+            <ul>
+              <li v-for="message in errors.name">{{ message }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            v-model="email"
+            type="text"
+            name="email"
+            id="email"
+            class="form-control"
+            :class="{ 'is-invalid': errors.name }"
+            placeholder="Your email here"
+            aria-describedby="emailHelper"
+          />
+          <div class="alert alert-danger" role="alert" v-if="errors.name">
+            <strong>Errors!</strong>
+
+            <ul>
+              <li v-for="message in errors.name">{{ message }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            v-model="message"
+            class="form-control"
+            :class="{ 'is-invalid': errors.name }"
+            name="message"
+            id="message"
+            rows="3"
+            placeholder="Your message here..."
+          ></textarea>
+          <div class="alert alert-danger" role="alert" v-if="errors.name">
+            <strong>Errors!</strong>
+
+            <ul>
+              <li v-for="message in errors.name">{{ message }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
       </div>
 
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea
-          class="form-control"
-          name="message"
-          id="message"
-          rows="3"
-          placeholder="Your message here..."
-        ></textarea>
+      <div class="loader text-center py-5" v-else>
+        <i class="fa-solid fa-spinner fa-spin-pulse fa-2xl"></i>
+        <div class="mt-3">Loading...</div>
       </div>
-
-      <button type="submit" class="btn btn-primary">Send</button>
     </form>
   </div>
 </template>

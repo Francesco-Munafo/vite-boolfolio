@@ -32,17 +32,26 @@ export default {
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" active-class="active" to="/projects"
+              <router-link
+                class="nav-link"
+                active-class="active"
+                :to="{ name: 'projects' }"
                 >Projects
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" active-class="active" to="/about"
+              <router-link
+                class="nav-link"
+                active-class="active"
+                :to="{ name: 'about' }"
                 >About
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" active-class="active" to="/contacts"
+              <router-link
+                class="nav-link"
+                active-class="active"
+                :to="{ name: 'contacts' }"
                 >Contacts
               </router-link>
             </li>
