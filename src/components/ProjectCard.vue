@@ -30,7 +30,7 @@ export default {
     <div class="card-footer d-flex justify-content-between mt-auto">
       <div class="info col-9">
         <div>Created at: {{ project.publication_date }}</div>
-        <div class="badge rounded-pill bg-primary">
+        <div class="badge rounded-pill bg-primary" v-if="project.type">
           {{ project.type.name }}
         </div>
         <div class="technologies">
