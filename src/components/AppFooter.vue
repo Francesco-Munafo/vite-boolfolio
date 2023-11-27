@@ -54,7 +54,7 @@ export default {
                   class="d-flex flex-grow-1 justify-content-center align-items-center bg-light rounded-5 p-2 px-4"
                 >
                   <img class="" src="../assets/img/Logo.png" alt="" />
-                  <h2>Boolean</h2>
+                  <h2 class="pf_text_boolean">boolean</h2>
                 </div>
               </a>
             </div>
