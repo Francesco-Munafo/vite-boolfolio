@@ -41,7 +41,9 @@ export default {
 
 <template>
   <div>
-    <h1 class="p-3 cm_title pf_text_light">Francesco's projects</h1>
+    <h1 class="p-3 h-100 cm_projects_title pf_text_light">
+      Francesco's projects
+    </h1>
   </div>
 
   <div class="container mt-5 pb-5">

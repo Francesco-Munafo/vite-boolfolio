@@ -216,6 +216,13 @@ transform: rotate(180deg);
   
 }
 
+.cm_projects_title{
+  font-family: 'Bayon', sans-serif;
+  font-size: 12rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
 .home_desc{
   font-family: 'Bayon', sans-serif;
   font-size: 40px;
@@ -253,6 +260,11 @@ transform: rotate(180deg);
   }
 }
 
+ @media screen and (max-width: 991px) {
+  .cm_projects_title{
+    font-size: 6rem;
+  }
+ }
 
-
+ 
 /* #endregion Utilities */

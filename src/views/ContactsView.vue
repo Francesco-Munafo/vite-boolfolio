@@ -59,11 +59,14 @@ export default {
 </script>
 
 <template>
-  <div class="p-5 mb-4 bg-dark text-light">
+  <div class="p-5 mb-4 pf_bg_dark text-light">
     <div class="container py-5">
       <h1 class="display-5 fw-bold">Send any request!</h1>
       <p class="col-md-8 fs-4">Find out what's in the pot</p>
-      <button class="btn btn-primary btn-lg" type="button">
+      <button
+        class="btn btn-primary btn-lg cm_font pf_text_light"
+        type="button"
+      >
         Find out more
       </button>
     </div>
@@ -75,10 +78,12 @@ export default {
         {{ success }}
       </strong>
     </div>
-    <form action="" class="my-5" v-on:submit.prevent="sendForm()">
+    <form action="" class="py-5" v-on:submit.prevent="sendForm()">
       <div v-if="!loading">
         <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
+          <label for="name" class="form-label cm_font pf_text_light"
+            >Name</label
+          >
           <input
             v-model="name"
             type="text"
@@ -98,7 +103,9 @@ export default {
           </div>
         </div>
         <div class="mb-3">
-          <label for="phone" class="form-label">Phone</label>
+          <label for="phone" class="form-label cm_font pf_text_light"
+            >Phone</label
+          >
           <input
             v-model="phone"
             type="tel"
@@ -118,7 +125,9 @@ export default {
           </div>
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
+          <label for="email" class="form-label cm_font pf_text_light"
+            >Email</label
+          >
           <input
             v-model="email"
             type="text"
@@ -139,7 +148,9 @@ export default {
         </div>
 
         <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
+          <label for="message" class="form-label cm_font pf_text_light"
+            >Message</label
+          >
           <textarea
             v-model="message"
             class="form-control"
@@ -158,7 +169,9 @@ export default {
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="submit" class="btn btn-primary cm_font pf_text_light">
+          Send
+        </button>
       </div>
 
       <div class="loader text-center py-5" v-else>

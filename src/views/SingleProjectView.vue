@@ -36,7 +36,7 @@ export default {
 
 <template>
   <div class="container single_project">
-    <div class="row my-5">
+    <div class="row py-5">
       <div class="col">
         <div class="card flex-row shadow" v-if="this.response">
           <img
@@ -68,7 +68,7 @@ export default {
             <small>Technologies:</small>
             <ul class="list-unstyled">
               <li
-                class="badge bg-secondary me-1"
+                class="badge pf_bg_main me-1"
                 v-for="technology in project.technologies"
               >
                 <svg
