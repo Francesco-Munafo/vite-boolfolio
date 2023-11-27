@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <div class="card h-100">
+  <div class="card h-100 pf_bg_light flex-lg-row">
     <img
       v-if="project.image.includes('https')"
       class="project_preview"
@@ -27,7 +27,7 @@ export default {
 
       <p class="card-description">{{ project.description }}</p>
     </div>
-    <div class="card-footer d-flex justify-content-between mt-auto">
+    <div class="d-flex justify-content-between my-auto me-4">
       <div class="info col-9">
         <div>Created at: {{ project.publication_date }}</div>
         <div class="badge rounded-pill bg-primary" v-if="project.type">
@@ -35,7 +35,7 @@ export default {
         </div>
         <div class="technologies">
           <div
-            class="badge bg-secondary"
+            class="badge pf_bg_main me-1"
             v-for="technology in project.technologies"
           >
             <i class="fas fa-tag fa-xs fa-fw"></i>
@@ -47,7 +47,7 @@ export default {
         class="links col-3 d-flex flex-column align-items-end justify-content-between"
       >
         <router-link
-          class="btn btn-primary"
+          class="btn btn-primary mb-2"
           :to="{ name: 'project', params: { slug: project.slug } }"
         >
           <svg
@@ -66,7 +66,7 @@ export default {
             />
           </svg>
         </router-link>
-        <a :href="project.git_link" class="btn btn-dark">
+        <a :href="project.git_link" class="btn btn-dark mb-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

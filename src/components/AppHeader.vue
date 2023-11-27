@@ -6,9 +6,9 @@ export default {
 
 <template>
   <header>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark shadow">
+    <nav class="navbar navbar-expand-sm navbar-dark pf_bg_main shadow">
       <div class="container">
-        <a class="navbar-brand" href="#">Boolfolio</a>
+        <a class="navbar-brand cm_font" href="#">Boolfolio</a>
         <button
           class="navbar-toggler d-lg-none"
           type="button"
@@ -24,7 +24,7 @@ export default {
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item">
               <router-link
-                class="nav-link"
+                class="nav-link cm_font"
                 active-class="active"
                 to="/"
                 aria-current="page"
@@ -33,7 +33,7 @@ export default {
             </li>
             <li class="nav-item">
               <router-link
-                class="nav-link"
+                class="nav-link cm_font"
                 active-class="active"
                 :to="{ name: 'projects' }"
                 >Projects
@@ -41,13 +41,13 @@ export default {
             </li>
             <li class="nav-item">
               <router-link
-                class="nav-link"
+                class="nav-link cm_font"
                 active-class="active"
                 :to="{ name: 'about' }"
                 >About
               </router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item cm_font">
               <router-link
                 class="nav-link"
                 active-class="active"

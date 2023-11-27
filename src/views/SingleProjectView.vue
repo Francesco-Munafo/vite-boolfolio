@@ -58,7 +58,10 @@ export default {
             <small>Created at:</small>
             <h5>{{ project.publication_date }}</h5>
             <small>Type:</small>
-            <div class="badge rounded-pill text-bg-primary ms-2">
+            <div
+              class="badge rounded-pill text-bg-primary ms-2"
+              v-if="project.type"
+            >
               {{ project.type.name }}
             </div>
             <br />

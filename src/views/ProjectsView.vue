@@ -40,9 +40,12 @@ export default {
 </script>
 
 <template>
-  <h1 class="p-3 text-muted">Cicciomax's projects</h1>
-  <div class="container my-5">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <div>
+    <h1 class="p-3 cm_title pf_text_light">Francesco's projects</h1>
+  </div>
+
+  <div class="container mt-5 pb-5">
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-1 g-4">
       <div class="col" v-if="projects.length > 0" v-for="project in projects">
         <ProjectCard :project="project"></ProjectCard>
       </div>
@@ -54,10 +57,10 @@ export default {
         <li
           class="page-item"
           v-for="link in this.links"
-          :class="link.active ? 'active' : ''"
+          :class="link.active ? 'active pf_bg_main' : ''"
         >
           <a
-            class="page-link"
+            class="page-link pf_bg_dark"
             role="button"
             aria-label="Previous"
             v-html="link.label"

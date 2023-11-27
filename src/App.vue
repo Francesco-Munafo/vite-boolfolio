@@ -45,7 +45,7 @@ export default {
   <body>
     <AppHeader></AppHeader>
 
-    <main>
+    <main class="pf_bg_dark">
       <router-view></router-view>
     </main>
 

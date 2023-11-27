@@ -1,4 +1,6 @@
 @use "../node_modules/bootstrap/scss/bootstrap.scss";
+@use "../scss/partials/partials" as *;
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
 
 .project_preview{
     max-height: 300px;
@@ -158,3 +160,91 @@ $glitch-bg-color: white;
   }
 
   /* #endregion GlitchText */
+
+/* #region Utilities */
+.pf_bg_dark{
+  background-color: $pf-dark;
+}
+
+.pf_bg_main{
+  background-color: $pf-main;
+}
+
+.pf_bg_light{
+  background-color: $pf-light;
+}
+
+.pf_text_main{
+  color: $pf-main;
+}
+
+.pf_text_light{
+  color: $pf-light;
+}
+
+.pf_text_dark{
+  color: $pf-dark;
+}
+
+.lh_20{
+  line-height: 15rem;
+}
+
+.cm_font{
+  font-family: 'Bayon', sans-serif;
+}
+.vertical_text{
+  writing-mode: vertical-rl;
+text-orientation: mixed; 
+transform: rotate(180deg);
+}
+
+.cm_title{
+  font-family: 'Bayon', sans-serif;
+  font-size: 180px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  
+}
+
+.home_desc{
+  font-family: 'Bayon', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.spacer{
+  margin: 12rem auto;
+  border: 2px solid $pf-main;
+  flex-grow: 1;
+  height: 0;
+  border-radius: 5px;
+}
+
+.spacer_item{
+  margin: 12rem auto;
+  border: 2px solid $pf-main;
+  border-radius: 10px;
+  height: 12px;
+  width: 5%;
+}
+
+.pagination {
+
+
+  .page-item.active>.page-link {
+      background-color: $pf_main;
+      border: 1px solid $pf_main;
+      color: $pf_light;
+  }
+
+  .page-link {
+      border-color: $pf_main;
+      color: $pf_main;
+  }
+}
+
+
+
+/* #endregion Utilities */
