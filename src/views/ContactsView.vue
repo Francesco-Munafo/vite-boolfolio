@@ -105,15 +105,15 @@ export default {
             name="phone"
             id="phone"
             class="form-control"
-            :class="{ 'is-invalid': errors.name }"
+            :class="{ 'is-invalid': errors.phone }"
             placeholder="Your phone number"
             aria-describedby="phoneHelper"
           />
-          <div class="alert alert-danger" role="alert" v-if="errors.name">
+          <div class="alert alert-danger" role="alert" v-if="errors.phone">
             <strong>Errors!</strong>
 
             <ul>
-              <li v-for="message in errors.name">{{ message }}</li>
+              <li v-for="message in errors.phone">{{ message }}</li>
             </ul>
           </div>
         </div>
@@ -125,15 +125,15 @@ export default {
             name="email"
             id="email"
             class="form-control"
-            :class="{ 'is-invalid': errors.name }"
+            :class="{ 'is-invalid': errors.email }"
             placeholder="Your email here"
             aria-describedby="emailHelper"
           />
-          <div class="alert alert-danger" role="alert" v-if="errors.name">
+          <div class="alert alert-danger" role="alert" v-if="errors.email">
             <strong>Errors!</strong>
 
             <ul>
-              <li v-for="message in errors.name">{{ message }}</li>
+              <li v-for="message in errors.email">{{ message }}</li>
             </ul>
           </div>
         </div>
@@ -143,17 +143,17 @@ export default {
           <textarea
             v-model="message"
             class="form-control"
-            :class="{ 'is-invalid': errors.name }"
+            :class="{ 'is-invalid': errors.message }"
             name="message"
             id="message"
             rows="3"
             placeholder="Your message here..."
           ></textarea>
-          <div class="alert alert-danger" role="alert" v-if="errors.name">
+          <div class="alert alert-danger" role="alert" v-if="errors.message">
             <strong>Errors!</strong>
 
             <ul>
-              <li v-for="message in errors.name">{{ message }}</li>
+              <li v-for="message in errors.message">{{ message }}</li>
             </ul>
           </div>
         </div>
