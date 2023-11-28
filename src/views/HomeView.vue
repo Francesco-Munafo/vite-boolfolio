@@ -21,6 +21,32 @@ export default {};
         <div class="pf_text_main">Francesco Munafo' (Cicciomax),</div>
         <div class="pf_text_light">Junior FullStack Web Developer.</div>
       </div>
+      <div class="techs_logo d-flex">
+        <div class="logo">
+          <img
+            width="60"
+            height="60"
+            src="../assets/img/HTML5_logo.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            width="43"
+            height="60"
+            src="../assets/img/css3_logo.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            width="60"
+            height="60"
+            src="../assets/img/javascript_logo.png"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
   </div>
   <div class="d-flex align-items-center w-75 mx-auto">

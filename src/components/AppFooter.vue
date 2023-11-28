@@ -61,7 +61,7 @@ export default {
             <div class="col"></div>
           </div>
         </div>
-        <div class="col">
+        <div class="col d-flex flex-column align-items-end">
           <ul class="list-unstyled text-white">
             <h5 class="text-white home_desc fs-3">INFO</h5>
             <li>
@@ -74,6 +74,21 @@ export default {
                   acquamarea1@gmail.com</a
                 ></span
               >
+            </li>
+          </ul>
+          <ul class="list-unstyled d-flex">
+            <li>
+              <a href="https://github.com/Francesco-Munafo"
+                ><i
+                  class="fa-brands fa-square-github fs-1 pf_text_dark me-4"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/francesco-munaf%C3%B2-30a94926a/"
+                ><i class="fa-brands fa-linkedin fs-1 pf_text_dark"></i
+              ></a>
             </li>
           </ul>
         </div>
