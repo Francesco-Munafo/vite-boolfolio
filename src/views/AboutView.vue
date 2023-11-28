@@ -57,7 +57,7 @@ export default {};
           exceeding expectations.
         </p>
         <p class="cm_font pf_text_light fs-5">
-          Whether you're a fellow enthusiast in [Your Industry], a creative
+          Whether you're a fellow enthusiast in Web Development, a creative
           colleague, or someone with an extraordinary idea, I'm eager to
           connect. Explore my portfolio, delve into the details of my projects,
           and don't hesitate to reach out for potential collaboration
